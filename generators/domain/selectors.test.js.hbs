@@ -1,15 +1,13 @@
 import { fromJS } from 'immutable';
-import get{{ properCase name }}Domain, {
-  selectExample
-} from '../selectors';
+import get{{ properCase domain }}Domain{{#if defaultState }}, { selectExample }{{/if}} from '../selectors';
 
-describe('get{{ properCase name }}Domain', () => {
+describe('get{{ properCase domain }}Domain', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });
 
   it('Expect to be set in the global domain', () => {
-    const selector = get{{ properCase name }}Domain();
+    const selector = get{{ properCase domain }}Domain();
     const {{ camelCase domain }}Domain = fromJS({});
     const globalState = fromJS({
       {{ camelCase domain }}Domain
@@ -17,6 +15,7 @@ describe('get{{ properCase name }}Domain', () => {
 
     expect(selector(globalState)).toEqual({{ camelCase domain }}Domain);
   });
+  {{#if defaultState }}
 
   it('Expect to select the example state', () => {
     const selector = selectExample();
@@ -29,4 +28,5 @@ describe('get{{ properCase name }}Domain', () => {
 
     expect(selector(domain)).toEqual(expected);
   });
+  {{/if}}
 });

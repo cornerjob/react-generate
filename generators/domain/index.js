@@ -4,8 +4,9 @@
 
 const dirExists = require('../utils/dirExists');
 const path = require('path');
+const config = require('../../config');
 const appRoot = require('app-root-path').resolve(process.env.npm_package_reactGenerate_srcPath);
-const testFileExtension = process.env.npm_package_reactGenerate_testFileExtension;
+const testFileExtension = process.env.npm_package_reactGenerate_testFileExtension || config.testFileExtension;
 
 module.exports = {
   description: 'Add a domain container',
@@ -24,7 +25,7 @@ module.exports = {
   }, {
     type: 'list',
     name: 'defaultState',
-    message: 'Do you want a default state in the reducer?',
+    message: 'Do you want a global reducer for this domain?',
     choices: [
       { name: 'No', value: false },
       { name: 'Yes', value: true }

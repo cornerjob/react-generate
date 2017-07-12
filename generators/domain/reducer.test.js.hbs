@@ -1,18 +1,21 @@
-import { combineReducers } from 'redux-immutable';
 {{#if defaultState }}
 import { fromJS } from 'immutable';
 {{/if}}
-import {{#if defaultState }}{ {{ camelCase domain }}Reducer }, {{/if}}{{ camelCase domain }}CombinedReducers from '../reducer';
+import { reducers{{#if defaultState }}, {{ camelCase domain }}Reducer{{/if}} } from '../reducer';
 
 describe('{{ camelCase domain }}Reducer', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });
 
-  it('returns the combined reducer', () => {
-    const expected = combineReducers({});
+  it('Expect to have the combined reducers', () => {
+    {{#if defaultState }}
+    const expected = { global: {{ camelCase domain }}Reducer };
+    {{else}}
+    const expected = {};
+    {{/if}}
 
-    expect({{ camelCase domain }}CombinedReducers).toEqual(expected);
+    expect(reducers).toEqual(expected);
   });
   {{#if defaultState }}
 
@@ -21,7 +24,7 @@ describe('{{ camelCase domain }}Reducer', () => {
       example: '{{ properCase domain }} domain'
     });
 
-    expect({{ camelCase domain }}Reducer(undefined, {})).toEqual(expected);
+    expect({{ camelCase domain }}Reducer(undefined, {})).toEqual(expected); // eslint-disable-line no-undefined
   });
   {{/if}}
 });

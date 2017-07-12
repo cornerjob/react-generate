@@ -4,8 +4,9 @@
 
 const dirExists = require('../utils/dirExists');
 const path = require('path');
+const config = require('../../config');
 const appRoot = require('app-root-path').resolve(process.env.npm_package_reactGenerate_srcPath);
-const testFileExtension = process.env.npm_package_reactGenerate_testFileExtension;
+const testFileExtension = process.env.npm_package_reactGenerate_testFileExtension || config.testFileExtension;
 
 module.exports = {
   description: 'Add a container component',

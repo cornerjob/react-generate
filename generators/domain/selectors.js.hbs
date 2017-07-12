@@ -11,12 +11,11 @@ const get{{ properCase domain }}Domain = () => state => state.get('{{ camelCase 
  * Other selectors
  */
 {{#if defaultState }}
- const selectExample = () => createSelector(
-   get{{ properCase domain }}Domain(),
-   {{ camelCase domain }} => {{ camelCase domain }}.get('example')
- );
+const selectExample = () => createSelector(
+  get{{ properCase domain }}Domain(),
+  {{ camelCase domain }}Domain => {{ camelCase domain }}Domain.get('example')
+);
 {{/if}}
-
 
 export default get{{ properCase domain }}Domain;
 {{#if defaultState }}

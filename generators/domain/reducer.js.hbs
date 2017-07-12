@@ -15,11 +15,13 @@ export function {{ camelCase domain }}Reducer(state = initialState, action) {
       return state;
   }
 }
-{{/if}}
 
-export default combineReducers({
-  // childStore: childReducer,
+{{/if}}
+export const reducers = {
   {{#if defaultState }}
   global: {{ camelCase domain }}Reducer
   {{/if}}
-});
+  // childStore: childReducer,
+};
+
+export default combineReducers(reducers);
