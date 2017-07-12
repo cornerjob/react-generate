@@ -11,7 +11,7 @@ const plopFile = path.join(__dirname, 'plopfile.js');
 const chalk = require('chalk');
 
 program
-  .option('-d, --cdomain', 'Generates a domain')
+  .option('-d --domains', 'Generates a domain')
   .option('-t, --container', 'Generates a container')
   .option('-p, --component', 'Generates a component')
   .parse(process.argv);

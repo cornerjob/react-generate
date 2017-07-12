@@ -66,7 +66,7 @@ Below, we have an example of the `[options]` you can pass to the `reactgen` comm
 ```
   Options:
 
-    -d, --cdomain    Generates a domain
+    -d, --domains    Generates a domain
     -t, --container  Generates a container
     -p, --component  Generates a component
     -h, --help       output usage information
