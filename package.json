@@ -1,7 +1,7 @@
 {
   "name": "react-generate",
   "description": "Cornerjob react components, containers, domains generator",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "main": "index.js",
   "bin": {
     "reactgen": "./index.js"
