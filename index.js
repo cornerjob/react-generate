@@ -10,16 +10,16 @@ const spawnSync = require( 'child_process' ).spawnSync;
 const plopFile = path.join(__dirname, 'plopfile.js');
 const chalk = require('chalk');
 
+program
+  .option('-d, --cdomain', 'Generates a domain')
+  .option('-t, --container', 'Generates a container')
+  .option('-p, --component', 'Generates a component')
+  .parse(process.argv);
+
 if (process.env.npm_package_reactGenerate_srcPath) {
   if (!process.env.npm_package_reactGenerate_testFileExtension) {
     console.log(chalk.keyword('orange')(`Warning: 'testFileExtension' was not specified, using '${config.testFileExtension}' by default\n`));
   }
-
-  program
-    .option('-d, --domains', 'Generates a domains')
-    .option('-t, --container', 'Generates a container')
-    .option('-p, --component', 'Generates a component')
-    .parse(process.argv);
 
   if (program.domains) {
     const ls = spawnSync( './node_modules/.bin/plop', ['--plopfile', plopFile, 'domain'], { stdio: 'inherit' });
