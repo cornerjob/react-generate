@@ -1,0 +1,13 @@
+// import React from 'react';
+// import { shallow } from 'enzyme';
+{{#if componentAsDir}}
+// import {{ properCase name }} from '../index';
+{{else}}
+// import {{ properCase name }} from '../{{ properCase name }}';
+{{/if}}
+
+describe('<{{ properCase name }} />', () => {
+  it('Expect to have unit tests specified', () => {
+    expect(true).toEqual(false);
+  });
+});

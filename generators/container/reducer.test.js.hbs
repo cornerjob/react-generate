@@ -1,0 +1,16 @@
+import { fromJS } from 'immutable';
+import {{ camelCase name }}Reducer from '../reducer';
+
+describe('{{ camelCase name }}Reducer', () => {
+  it('Expect to have unit tests specified', () => {
+    expect(true).toEqual(false);
+  });
+
+  it('returns the initial state', () => {
+    const expected = fromJS({
+      example: 'Hello {{ properCase name }} container'
+    });
+
+    expect({{ camelCase name }}Reducer(undefined, {})).toEqual(expected);
+  });
+});

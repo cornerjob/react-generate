@@ -1,0 +1,23 @@
+import { createSelector } from 'reselect';
+import get{{ properCase domain }}Domain from '../selectors';
+
+/**
+ * Get the {{ camelCase name }} store
+ */
+const get{{ properCase name }}Store = () => createSelector(
+  get{{ properCase domain }}Domain(),
+  {{ camelCase domain }}Domain => {{ camelCase domain }}Domain.get('{{ camelCase name }}Store')
+);
+
+/**
+ * Other selectors
+ */
+const selectExample = () => createSelector(
+  get{{ properCase name }}Store(),
+  {{ camelCase name }}Store => {{ camelCase name }}Store.get('example')
+);
+
+export default get{{ properCase name }}Store;
+export {
+  selectExample
+};

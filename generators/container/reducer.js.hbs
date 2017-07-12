@@ -1,0 +1,17 @@
+import { fromJS } from 'immutable';
+import { actionTypes as at } from './constants';
+
+const initialState = fromJS({
+  example: 'Hello {{ properCase name }} container'
+});
+
+function {{ camelCase name }}Reducer(state = initialState, action) {
+  switch (action.type) {
+    case at.EXAMPLE_CONSTANT:
+      return state;
+    default:
+      return state;
+  }
+}
+
+export default {{ camelCase name }}Reducer;

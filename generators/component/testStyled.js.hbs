@@ -1,0 +1,25 @@
+/**
+ * @jest-environment node
+ */
+
+import React from 'react';
+import renderer from 'react-test-renderer';
+import 'jest-styled-components';
+
+{{#if componentAsDir}}
+import {{ properCase name }} from '../index';
+{{else}}
+import {{ properCase name }} from '../{{ properCase name }}';
+{{/if}}
+
+describe('<{{ properCase name }} />', () => {
+  it('Expect to have unit tests specified', () => {
+    expect(true).toEqual(false);
+  });
+
+  it('renders with its style', () => {
+    const tree = renderer.create(<{{ properCase name }} />).toJSON();
+
+    expect(tree).toMatchStyledComponentsSnapshot();
+  });
+});

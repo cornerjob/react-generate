@@ -1,0 +1,26 @@
+{{#if defaultState }}
+import { createSelector } from 'reselect';
+
+{{/if}}
+/**
+ * Get the {{ properCase domain }} domain
+ */
+const get{{ properCase domain }}Domain = () => state => state.get('{{ camelCase domain }}Domain');
+
+/**
+ * Other selectors
+ */
+{{#if defaultState }}
+ const selectExample = () => createSelector(
+   get{{ properCase domain }}Domain(),
+   {{ camelCase domain }} => {{ camelCase domain }}.get('example')
+ );
+{{/if}}
+
+
+export default get{{ properCase domain }}Domain;
+{{#if defaultState }}
+export {
+  selectExample
+};
+{{/if}}

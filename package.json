@@ -1,0 +1,33 @@
+{
+  "name": "react-generate",
+  "description": "Cornerjob react components, containers, domains generator",
+  "version": "0.0.1",
+  "main": "index.js",
+  "bin": {
+    "reactgen": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "plop": "plop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cornerjob/react-generate.git"
+  },
+  "keywords": [
+    "react",
+    "generators",
+    "cli"
+  ],
+  "author": "cornerjob",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cornerjob/react-generate/issues"
+  },
+  "homepage": "https://github.com/cornerjob/react-generate",
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "commander": "2.11.0",
+    "plop": "1.8.0"
+  }
+}

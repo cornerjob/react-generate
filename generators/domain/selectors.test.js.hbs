@@ -1,0 +1,32 @@
+import { fromJS } from 'immutable';
+import get{{ properCase name }}Domain, {
+  selectExample
+} from '../selectors';
+
+describe('get{{ properCase name }}Domain', () => {
+  it('Expect to have unit tests specified', () => {
+    expect(true).toEqual(false);
+  });
+
+  it('Expect to be set in the global domain', () => {
+    const selector = get{{ properCase name }}Domain();
+    const {{ camelCase domain }}Domain = fromJS({});
+    const globalState = fromJS({
+      {{ camelCase domain }}Domain
+    });
+
+    expect(selector(globalState)).toEqual({{ camelCase domain }}Domain);
+  });
+
+  it('Expect to select the example state', () => {
+    const selector = selectExample();
+    const expected = 'value';
+    const domain = fromJS({
+      {{ camelCase domain }}Domain: {
+        example: expected
+      }
+    });
+
+    expect(selector(domain)).toEqual(expected);
+  });
+});

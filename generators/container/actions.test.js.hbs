@@ -1,0 +1,19 @@
+
+import { exampleAction } from '../actions';
+import { actionTypes as at } from '../constants';
+
+describe('{{ properCase name }} actions', () => {
+  it('Expect to have unit tests specified', () => {
+    expect(true).toEqual(false);
+  });
+
+  describe('Example Action', () => {
+    it('has a type of EXAMPLE_CONSTANT', () => {
+      const expected = {
+        type: at.EXAMPLE_CONSTANT
+      };
+
+      expect(exampleAction()).toEqual(expected);
+    });
+  });
+});

@@ -1,0 +1,39 @@
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+{{#if wantActionsAndReducer}}
+import { createStructuredSelector } from 'reselect';
+import { selectExample } from './selectors';
+{{/if}}
+
+export class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
+  render() {
+    const { example } = this.props;
+
+    return (
+      <div>{example}</div>
+    );
+  }
+}
+
+{{ properCase name }}.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  example: PropTypes.string
+};
+
+{{#if wantActionsAndReducer}}
+const mapStateToProps = createStructuredSelector({
+  example: selectExample()
+});
+{{/if}}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch
+  };
+}
+
+{{#if wantActionsAndReducer}}
+export default connect(mapStateToProps, mapDispatchToProps)({{ properCase name }});
+{{else}}
+export default connect(null, mapDispatchToProps)({{ properCase name }});
+{{/if}}

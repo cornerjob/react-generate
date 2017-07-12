@@ -1,0 +1,25 @@
+import { combineReducers } from 'redux-immutable';
+{{#if defaultState }}
+import { fromJS } from 'immutable';
+{{/if}}
+// import childReducer from './ChildContainer/reducer';
+
+{{#if defaultState }}
+const initialState = fromJS({
+  example: '{{ properCase domain }} domain'
+});
+
+export function {{ camelCase domain }}Reducer(state = initialState, action) {
+  switch (action.type) {
+    default:
+      return state;
+  }
+}
+{{/if}}
+
+export default combineReducers({
+  // childStore: childReducer,
+  {{#if defaultState }}
+  global: {{ camelCase domain }}Reducer
+  {{/if}}
+});

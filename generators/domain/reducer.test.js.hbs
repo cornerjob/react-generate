@@ -1,0 +1,27 @@
+import { combineReducers } from 'redux-immutable';
+{{#if defaultState }}
+import { fromJS } from 'immutable';
+{{/if}}
+import {{#if defaultState }}{ {{ camelCase domain }}Reducer }, {{/if}}{{ camelCase domain }}CombinedReducers from '../reducer';
+
+describe('{{ camelCase domain }}Reducer', () => {
+  it('Expect to have unit tests specified', () => {
+    expect(true).toEqual(false);
+  });
+
+  it('returns the combined reducer', () => {
+    const expected = combineReducers({});
+
+    expect({{ camelCase domain }}CombinedReducers).toEqual(expected);
+  });
+  {{#if defaultState }}
+
+  it('returns the initial state', () => {
+    const expected = fromJS({
+      example: '{{ properCase domain }} domain'
+    });
+
+    expect({{ camelCase domain }}Reducer(undefined, {})).toEqual(expected);
+  });
+  {{/if}}
+});
