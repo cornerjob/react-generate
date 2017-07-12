@@ -2,8 +2,10 @@
 
 'use strict';
 
-var program = require('commander');
-var spawnSync = require( 'child_process' ).spawnSync;
+const program = require('commander');
+const path = require('path');
+const spawnSync = require( 'child_process' ).spawnSync;
+const plopFile = path.join(__dirname, 'plopfile.js');
 
 program
   .option('-d, --domains', 'Generates a domains')
@@ -12,13 +14,13 @@ program
   .parse(process.argv);
 
 if (program.domains) {
-  var ls = spawnSync( 'npm', ['run', 'plop', 'domain'], { stdio: 'inherit' });
+  const ls = spawnSync( './node_modules/.bin/plop', ['--plopfile', plopFile, 'domain'], { stdio: 'inherit' });
 }
 
 if (program.container) {
-  var ls = spawnSync( 'npm', ['run', 'plop', 'container'], { stdio: 'inherit' });
+  const ls = spawnSync( './node_modules/.bin/plop', ['--plopfile', plopFile, 'container'], { stdio: 'inherit' });
 }
 
 if (program.component) {
-  var ls = spawnSync( 'npm', ['run', 'plop', 'component'], { stdio: 'inherit' });
+  const ls = spawnSync( './node_modules/.bin/plop', ['--plopfile', plopFile, 'component'], { stdio: 'inherit' });
 }
