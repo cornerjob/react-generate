@@ -7,12 +7,13 @@ To keep the consistency in React projects, use this library to auto-generate cod
 
 We are using the following libraries in our React project. If your project uses these libraries then `react-generate` is for you.
 
-* [immutable](https://github.com/facebook/immutable-js/)
-* [redux-immutable](https://github.com/gajus/redux-immutable)
-* [reselect](https://github.com/reactjs/reselect)
-* [enzyme](https://github.com/airbnb/enzyme)
-* [jest](https://github.com/facebook/jest)
-* [styled-components](https://github.com/styled-components/styled-components)
+* [immutable](https://github.com/facebook/immutable-js/) (v3.8.1+)
+* [redux-immutable](https://github.com/gajus/redux-immutable) (v3.1.0+)
+* [reselect](https://github.com/reactjs/reselect) (v2.5.4+)
+* [enzyme](https://github.com/airbnb/enzyme) (v3.2.0+)
+* [jest](https://github.com/facebook/jest) (v20.0.4+)
+* [styled-components](https://github.com/styled-components/styled-components) (v2.2.4+)
+* [jest-styled-components](https://github.com/styled-components/jest-styled-components) (v3.3.2+)
 
 ## Getting Started
 
@@ -38,7 +39,7 @@ Let's get started by configuring your `package.json`, you have to add a script t
 
 Now we need some parameters to make this library work:
 
-* **srcPath** *(required)*: the path to the main source, we also need the `container` and `component` directories within it.
+* **srcPath** *(required)*: the path to the main source, we also need the *`container` and `component` directories within it*.
 * **testFileExtension** *(optional)*: The sub-extension for the test files that we are going to generate
 
 

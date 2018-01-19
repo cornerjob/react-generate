@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { {{ component }} } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 {{#if wantActionsAndReducer}}
@@ -6,7 +6,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectExample } from './selectors';
 {{/if}}
 
-export class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
+export class {{ properCase name }} extends {{ component }} {
   render() {
     const { example } = this.props;
 

@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "reactgen": "reactgen"
+    "generate:domain": "node index.js --domains",
+    "generate:container": "node index.js --container",
+    "generate:component": "node index.js --component"
   },
   "repository": {
     "type": "git",
