@@ -20,6 +20,6 @@ describe('<{{ properCase name }} />', () => {
   it('renders with its style', () => {
     const tree = renderer.create(<{{ properCase name }} />).toJSON();
 
-    expect(tree).toMatchStyledComponentsSnapshot();
+    expect(tree).toMatchSnapshot();
   });
 });
