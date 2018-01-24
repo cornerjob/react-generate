@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { create } from 'react-test-renderer';
 import 'jest-styled-components';
 
 {{#if componentAsDir}}
@@ -14,7 +14,7 @@ describe('<{{ properCase name }} />', () => {
   });
 
   it('renders with its style', () => {
-    const tree = renderer.create(<{{ properCase name }} />).toJSON();
+    const tree = create(<{{ properCase name }} />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
